@@ -46,4 +46,5 @@ results['Number of PM10 Stations'] = pm10_stations_per_county.rename(index={'US'
                                                                             'PH': 'Philippines'})
 results['Area (in square kilometers)'] = areas                                                                                                             # Add country area to table
 results['Density of PM10 Stations per 1000 sq. km'] = 1000 * results['Number of PM10 Stations'] / results['Area (in square kilometers)']                   # Calculate the station density
+results = results.sort_values(by = 'Density of PM10 Stations per 1000 sq. km', ascending = False)                                                          # Sort the table after station density in descending order                                                                                                                                                        
 print(results.to_markdown(floatfmt=(".0f", ".0f", ".0f",".3f")))                                                                                           # Print the table as markdown
